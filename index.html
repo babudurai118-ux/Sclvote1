@@ -530,7 +530,7 @@ async function confirmDeleteVote(idx) {
 
 async function purgeAll() {
   const ok = await showConfirm("Permanently erase ALL vote data?\n\nThis cannot be undone."); if (!ok) return;
-  auditLog = []; usedCodes = new Set(); currentCode = ""; initCounts(); saveToStorage(); isCountingDown = false; isShowingResults = false; if (cdTimer) clearTimeout(cdTimer); showScreen("startScreen"); showToast("All vote data wiped ✓");
+  auditLog = []; usedCodes = new Set(); currentCode = ""; initCounts(); saveToStorage(); isCountingDown = false; isShowingResults = false; if (cdTimer) clearTimeout(cdTimer); showScreen("startScreen"); pushVotesToJsonBin(); showToast("All vote data wiped ✓");
 }
 
 let _confirmResolve = null;
